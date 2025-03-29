@@ -1,0 +1,33 @@
+<% layout("layouts/boilerplate")%>
+<body>
+  <h3>All Listings</h3>
+  <!-- <form action="/listings/new" method="get">
+        <button>Add new listing</button>
+    </form> -->
+   
+    <div class="row">
+        <% listing.forEach(element => { %>
+          <div class="col-md-4 mb-4"> <!-- Adjust grid columns and spacing -->
+            <div class="card listing-card" style="width: 100%">
+              <a href="/listings/<%= element._id %>" class="show-link">
+                <img src="<%= element.image.url %>" class="card-img-top" alt="..." style="height: 20rem;" />
+              </a>
+              <!-- You can add a card overlay here if needed, but remove the empty <a> -->
+              <!-- <div class="card-img-overlay"></div> -->
+      
+              <div class="card-body">
+                <a href="/listings/<%= element._id %>" class="show-link">
+                  <h2 class="card-title"><%= element.title %></h2>
+                </a>
+                <!-- <p class="card-text"><%- element.description %></p> -->
+                <p>Price: &#8377; <%= element.price.toLocaleString("en-IN") %></p>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      
+      
+      
+
+</body>
