@@ -86,7 +86,7 @@ app.engine("ejs", ejsMate);
 async function main() {
   try {
     await mongoose
-      .connect("mongodb://localhost:27017/hostals")
+      .connect("mongodb+srv://abhishekmadoliya:1GIFYE5D3XJfN8oh@clusterone.x8pdifu.mongodb.net/hostals?retryWrites=true&w=majority&appName=ClusterOne")
       .then(() => {
         console.log("Connected to MongoDB");
       })
